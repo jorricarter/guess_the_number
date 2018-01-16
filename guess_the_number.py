@@ -32,6 +32,9 @@ def check_guess(guess, secret):
 
 def main():
 
+    counter = 0
+
+
     (low, high) = configure_range()
     secret = generate_secret(low, high)
 
@@ -39,7 +42,9 @@ def main():
         guess = get_guess()
         result = check_guess(guess, secret)
         print(result)
+        print('number of guesses: ', counter)
 
+        counter += 1
         if result == correct:
             break
 
