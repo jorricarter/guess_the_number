@@ -1,4 +1,5 @@
 import random
+
 not_a_number = 'That is not a number. Please try again.'
 correct = 'you guessed correctly!'
 too_low = 'too low'
