@@ -1,5 +1,4 @@
 import random
-
 not_a_number = 'That is not a number. Please try again.'
 correct = 'you guessed correctly!'
 too_low = 'too low'
@@ -39,10 +38,7 @@ def check_guess(guess, secret):
 
 
 def main():
-
     counter = 0
-
-
     (low, high) = configure_range()
     secret = generate_secret(low, high)
 
@@ -56,6 +52,13 @@ def main():
         if result == correct:
             break
 
-
 if __name__ == '__main__':
-    main()
+    replay = "Yes"
+    while replay == "Yes" or replay =="yes":
+        main()
+        while replay != "yes" or replay != "Yes" or replay != "No" or replay != "no":
+            replay = input("Would you like to play again?\n'Yes' or 'No'?\n")
+            if replay == "No" or replay == "no":
+                break
+            if replay != 'Yes' or replay != 'yes':
+                    print("I'm sorry, I did not understand your response.")
