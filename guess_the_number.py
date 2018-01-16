@@ -1,5 +1,5 @@
 import random
-
+not_a_number = 'That is not a number. Please try again.'
 correct = 'you guessed correctly!'
 too_low = 'too low'
 too_high = 'too high'
@@ -18,14 +18,15 @@ def generate_secret(low, high):
 def get_guess():
     #todo varify input is a number. if not, notify user
     try:
-        return int(input('Guess the secret number? '))
+        return int(input('Guess the secret number:\n'))
     except ValueError:
-        print("That is not a number. Please try again.\n")
-        return -1
+        return 'null'
 
 
 def check_guess(guess, secret):
     '''compare guess and secret, return string describing result of comparison'''
+    if guess == 'null':
+        return not_a_number
     if guess == secret:
         return correct
     if guess < secret:
